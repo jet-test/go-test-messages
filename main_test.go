@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestFib(t *testing.T) {
+func TestGoroutines(t *testing.T) {
 	for i := 0; i < 10; i++ {
 		var name = "test #" + strconv.Itoa(i)
 		t.Run(name, func(t *testing.T) {
