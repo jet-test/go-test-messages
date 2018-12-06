@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/stretchr/testify/assert"
 	"strconv"
 	"testing"
 )
@@ -12,6 +13,7 @@ func TestGoroutines(t *testing.T) {
 			t.Error("start", name)
 			Sleep()
 			t.Error("end", name)
+			assert.Equal(t, "success "+name, "error "+name)
 		})
 	}
 }
