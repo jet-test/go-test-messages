@@ -7,11 +7,19 @@ import (
 )
 
 func TestGoroutines(t *testing.T) {
-	for i := 0; i < 10; i++ {
+	for i := 0; i < 5; i++ {
 		var name = "test #" + strconv.Itoa(i)
 		t.Run(name, func(t *testing.T) {
 			t.Error("start", name)
 			Sleep()
+			for i := 0; i < 5; i++ {
+				var name = "sub test #" + strconv.Itoa(i) + " from " + name
+				t.Run(name, func(t *testing.T) {
+					t.Error("start", name)
+					Sleep()
+					t.Error("end", name)
+				})
+			}
 			t.Error("end", name)
 			assert.Equal(t, "success "+name, "error "+name)
 		})

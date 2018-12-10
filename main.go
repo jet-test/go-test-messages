@@ -25,5 +25,5 @@ func main() {
 }
 
 func Sleep() {
-	time.Sleep(time.Second)
+	time.Sleep(300 * time.Millisecond)
 }
