@@ -11,12 +11,12 @@ func TestGoroutines(t *testing.T) {
 		var name = "test #" + strconv.Itoa(i)
 		t.Run(name, func(t *testing.T) {
 			t.Error("start", name)
-			Sleep()
+			Sleep(name)
 			for i := 0; i < 5; i++ {
 				var name = "sub test #" + strconv.Itoa(i) + " from " + name
 				t.Run(name, func(t *testing.T) {
 					t.Error("start", name)
-					Sleep()
+					Sleep(name)
 					t.Error("end", name)
 				})
 			}

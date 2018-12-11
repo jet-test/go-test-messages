@@ -24,6 +24,7 @@ func main() {
 		{Class: "email", Value: "email@mail.ru"}}})
 }
 
-func Sleep() {
+func Sleep(name string) {
+	fmt.Println("sleep", name)
 	time.Sleep(300 * time.Millisecond)
 }
