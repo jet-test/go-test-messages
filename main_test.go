@@ -18,6 +18,7 @@ func TestGoroutines(t *testing.T) {
 					t.Error("start", name)
 					Sleep(name)
 					t.Error("end", name)
+					assert.Equal(t, "success "+name, "error "+name)
 				})
 			}
 			t.Error("end", name)
