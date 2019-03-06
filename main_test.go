@@ -12,9 +12,9 @@ func TestSimpleSuccess(t *testing.T) {
 }
 
 func TestSimpleFail(t *testing.T) {
-	//t.Error("Error message")
 	err := crash()
 	fmt.Println(err.(*errors.Error).ErrorStack())
+	t.Fail()
 }
 
 func TestComparisonFail(t *testing.T) {
