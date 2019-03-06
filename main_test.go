@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+	"github.com/go-errors/errors"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
@@ -10,8 +12,9 @@ func TestSimpleSuccess(t *testing.T) {
 }
 
 func TestSimpleFail(t *testing.T) {
-	t.Error("Error message")
-	t.Fail()
+	//t.Error("Error message")
+	err := crash()
+	fmt.Println(err.(*errors.Error).ErrorStack())
 }
 
 func TestComparisonFail(t *testing.T) {
@@ -45,4 +48,8 @@ func TestSubTestsFail(t *testing.T) {
 		t.Log("fail message #2")
 		t.Fail()
 	})
+}
+
+func crash() error {
+	return errors.New(errors.Errorf("oh dear"))
 }
