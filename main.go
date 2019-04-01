@@ -7,5 +7,3 @@ import (
 func crash() error {
 	return errors.New(errors.Errorf("oh dear"))
 }
-
-error
