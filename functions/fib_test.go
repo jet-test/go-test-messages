@@ -29,3 +29,9 @@ func TestFib(t *testing.T) {
 		})
 	}
 }
+
+func TestCondition(t *testing.T) {
+	if Condition(true) {
+		t.Errorf("Condition() = %v, want %v", true, false)
+	}
+}

@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/jet-test/go-test-messages/functions"
-	"github.com/jet-test/go-test-messages/obj"
+	"go-test-messages/functions"
+	"go-test-messages/obj"
 	"time"
 )
 

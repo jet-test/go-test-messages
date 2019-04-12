@@ -10,3 +10,15 @@ func Fib(position int8) int64 {
 	}
 	return last
 }
+
+func Condition(flag bool) bool {
+	if flag {
+		if flag {
+			return false
+		} else {
+			return true
+		}
+	} else {
+		return true
+	}
+}
