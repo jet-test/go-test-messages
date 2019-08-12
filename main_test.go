@@ -6,6 +6,13 @@ import (
 	"testing"
 )
 
+func TestJsonOutput(t *testing.T) {
+	t.Error("{")
+	t.Error("  {'data': 1},")
+	t.Error("  {'data': 2}")
+	t.Error("}")
+}
+
 func TestGoroutines(t *testing.T) {
 	for i := 0; i < 5; i++ {
 		var name = "test #" + strconv.Itoa(i)
